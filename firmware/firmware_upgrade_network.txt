@@ -1,0 +1,31 @@
+resource "intersight_firmware_upgrade" "sprint-firmware-update" {
+  # Description: "Desired upgrade mode to choose either direct download based upgrade or network share upgrade."
+  # * `direct_upgrade` - Upgrade mode is direct download.
+  # * `network_upgrade` - Upgrade mode is network upgrade.
+  upgrade_type =  "network_upgrade"
+
+
+  network_share {
+    # `nfs` - File server protocol used is NFS.\n* `cifs` - File server protocol used is CIFS.\n* `www` - File server protocol used is WWW."
+    map_type = "www"
+
+    # nfs_server {
+    #     file_location = "10.5.30.39/staticfiles/ucs-c240m5-huu-4.1.1f.iso"
+    # }
+
+    # cifs_server {
+    #     file_location = "10.5.30.39/staticfiles/ucs-c240m5-huu-4.1.1f.iso" 
+    # }
+
+    http_server {
+      location_link = "http://10.5.30.39/staticfiles/ucs-c240m5-huu-4.1.1f.iso"
+    }
+  }
+
+
+  server {
+    # Server Type is either compute.Blade or compute.RackUnit
+    object_type = "compute.Blade"
+    moid = data.intersight_compute_blade.FCH2023V275.moid
+  }
+}
