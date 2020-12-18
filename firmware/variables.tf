@@ -15,7 +15,7 @@ variable "endpoint" {
 variable "image" {
     description = "Define the image to use"
     type        = string
-    default   = "ucs-intersight-server-b200-m5.4.1.2a.gbin"
+    default   = "ucs-intersight-server-b200-m5.4.1.2b.gbin"
 }
 
 variable "object_type" {
@@ -41,5 +41,5 @@ variable "serial" {
 variable "secretkeyfile" {
     description = "Filename (PEM Format) that provides secret key for Terraform Account"
     type        = string
-    default     = "/home/tyscott/SecretKey.txt"
+    default     = "../../SecretKey.txt"
 }
