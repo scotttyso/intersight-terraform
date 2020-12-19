@@ -1,9 +1,9 @@
 resource "intersight_iam_ldap_policy" "{{ldap_name}}" {
   name                   = "{{ldap_name}}"
-  description            = "{{ldap_name}}"
-  enabled                = {{ldap_name}}
-  enable_dns             = {{ldap_name}}
-  user_search_precedence = "{{ldap_name}}"
+  description            = "{{descr}}"
+  enabled                = {{enabled}}
+  enable_dns             = {{enable_dns}}
+  user_search_precedence = "{{search_precedence}}"
   organization {
     object_type = "organization.Organization"
     moid = data.intersight_organization_organization.default.moid

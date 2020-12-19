@@ -1,0 +1,35 @@
+{
+  "resource": {
+    "intersight_iam_ldap_policy": {
+      "{{ldap_name}}": {
+        "name": "{{ldap_name}}",
+        "description": "{{descr}}",
+        "enabled": "{{enabled}}",
+        "enable_dns": "{{enable_dns}}",
+        "user_search_precedence": "{{search_precedence}}",
+        "organization": {
+          "object_type": "organization.Organization",
+          "moid": "data.intersight_organization_organization.default.moid"
+        }
+      },
+      "base_properties": {
+        "attribute": "CiscoAvPair",
+        "base_dn": "{{base_dn}}",
+        "bind_dn": "{{bind_dn}}",
+        "bind_method": "{{bind_method}}",
+        "domain": "{{domain}}",
+        "enable_encryption": "{{encryption}}",
+        "enable_group_authorization": "{{group_auth}}",
+        "filter": "sAMAccountName",
+        "group_attribute": "memberOf",
+        "nested_group_search_depth": "{{search_depth}}",
+        "timeout": "{{timeout}}"
+      },
+      "dns_parameters": {
+        "nr_source": "{{nr_source}}",
+        "search_forest": "{{search_forrest}}",
+        "search_domain": "{{search_domain}}"
+      }
+    }
+  }
+}
