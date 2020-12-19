@@ -1,0 +1,11 @@
+resource "intersight_deviceconnector_policy" "{{device_connect}}" {
+  name            = "{{device_connect}}"
+  description     = "{{descr}}"
+  lockout_enabled = {{lockout}}
+  organization {
+    # This is pointing back to the Org defined in the Main.tf
+    object_type = "organization.Organization"
+    moid = data.intersight_organization_organization.default.moid
+  }
+}
+

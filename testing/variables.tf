@@ -1,13 +1,13 @@
-/*
-*** main.tf Variables **
-*/
+# https://intersight.com/an/settings/api-keys/
+# Generate API key to obtain the API Key and PEM file
+
 variable "api_key" {
-    description = "API Key for Terraform Demo Account. Generate this in Intersight under; Settings > API Key: [Generate a Key]"
+    description = "API Key for Terraform Demo Account"
     type        = string
 }
 
 variable "endpoint" {
-    description = "Intersight API endpoint.  URL below is for SaaS, need on-premise URL if used."
+    description = "Intersight API endpoint"
     type        = string
     default     = "https://intersight.com"
 }

@@ -20,14 +20,14 @@ data "intersight_organization_organization" "default" {
     name = var.organization
 }
 
-data "intersight_compute_blade" "default" {
-    serial = var.serial
-}
-
 data "intersight_firmware_distributable" "default" {
     name = var.image
 }
 
-# output "org_default_moid" {
-#     value = data.intersight_organization_organization.default.moid
-# }
+output "image_default_moid" {
+    value = data.intersight_firmware_distributable.default.moid
+}
+
+#resource "intersight_firmware_upgrade" "rack_upgrade" {
+#    distributable = data.intersight_firmware_distributable.412b_image.moid
+#}

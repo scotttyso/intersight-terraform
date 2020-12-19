@@ -17,17 +17,9 @@ provider "intersight" {
 ## Get the MO data for the default organization in the account.
 # /api/v1/organization/Organizations$filter=(Name eq 'default')
 data "intersight_organization_organization" "default" {
-    name = var.organization
+    name = "default"
 }
 
-data "intersight_compute_blade" "default" {
-    serial = var.serial
+output "org_default_moid" {
+    value = data.intersight_organization_organization.default.moid
 }
-
-data "intersight_firmware_distributable" "default" {
-    name = var.image
-}
-
-# output "org_default_moid" {
-#     value = data.intersight_organization_organization.default.moid
-# }
