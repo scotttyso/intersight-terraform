@@ -28,6 +28,6 @@ data "intersight_firmware_distributable" "default" {
     name = var.image
 }
 
-# output "org_default_moid" {
-#     value = data.intersight_organization_organization.default.moid
-# }
+output "org_default_moid" {
+    value = data.intersight_organization_organization.default.moid
+}
